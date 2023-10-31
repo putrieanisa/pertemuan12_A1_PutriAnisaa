@@ -1,0 +1,25 @@
+import menu
+import persegi
+import lingkaran
+import segitiga
+
+# Program Utama
+def main():
+    while True:
+        pilihan = menu.tampilkan_menu()
+        if pilihan == "1":
+            if not persegi.bentuk_persegi_panjang():
+                break
+        elif pilihan == "2":
+            if not lingkaran.bentuk_lingkaran():
+                break
+        elif pilihan == "3":
+            if not segitiga.bentuk_segitiga():
+                break 
+        elif pilihan == "4":
+            break
+        else:
+            print("Pilihan tidak valid. Silahkan pilih kembali.")
+
+if __name__ == "__main__":
+    main()
