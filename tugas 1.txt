@@ -1,0 +1,32 @@
+import math
+
+def input_koefisien():
+    a = int(input('Masukkan a: '))
+    b = int(input('Masukkan b: '))
+    c = int(input('Masukkan c: '))
+    return a, b, c
+
+def hitung_diskriminan(a, b, c):
+    return (b**2) - (4*a*c)
+
+def hitung_akar_persamaan(a, b, d):
+    x1 = (-b + math.sqrt(d)) / (2*a)
+    x2 = (-b - math.sqrt(d)) / (2*a)
+    return x1, x2
+
+def main():
+    a, b, c = input_koefisien()
+    d = hitung_diskriminan(a, b, c)
+
+    if d < 0:
+        print('Persamaan tidak memiliki akar real.')
+    elif d == 0:
+        x = -b / (2*a)
+        print('Persamaan memiliki satu akar: {0}'.format(x))
+    else:
+        x1, x2 = hitung_akar_persamaan(a, b, d)
+        print('Solusinya adalah {0} dan {1}'.format(x1, x2))
+
+if __name__ == "__main__":
+    main()
+
